@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# logs
+yarn-debug.log*
+yarn-error.log*
+/Api/generated/
+/src/data/api/generated/
