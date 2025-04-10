@@ -16,6 +16,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Run Mockoon CLI
+        uses: mockoon/cli-action@v2
+        with:
+          # Mockoon CLI version, default to 'latest'
+          version: "latest"
+          # Mockoon local data file or URL
+          data-file: "./src/data/api/openapi.json"
+          port: 3003
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
