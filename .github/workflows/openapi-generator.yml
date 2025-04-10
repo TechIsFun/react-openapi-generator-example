@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run Mockoon CLI
         uses: mockoon/cli-action@v2
@@ -24,6 +24,9 @@ jobs:
           # Mockoon local data file or URL
           data-file: "./src/data/api/openapi.json"
           port: 3003
+
+      - name: Make test call
+        run: curl -X GET http://localhost:3003/api/v3/pet/1
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
